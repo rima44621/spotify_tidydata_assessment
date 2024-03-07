@@ -1,0 +1,25 @@
+Description of the Dataset
+
+The 'track_artist' variable was corrected from "Bad Sunny" to "Bad Bunny" to ensure accurate artist information, maintaining consistency and reliability in the dataset for precise track identification and cataloguing.
+
+'TTrack_nameff5' representing track names was inaccurately named. It was renamed to "track_name" for clarity, coherence, and user intuitiveness in understanding the column's purpose.
+
+The 'mode' variable, initially in character format, impeded numeric operations due to the presence of "T" in its values. To enable meaningful quantitative analyses, the values were converted to numeric format, and "T" characters were removed, ensuring enhanced data consistency and quality.  
+
+The variables 'key' and 'track_popularity' were converted to numeric format to ensure that they are represented as numerical values rather than integers. This adjustment was made to facilitate future numerical operations, statistical analyses, and modelling, enabling meaningful calculations and comparisons.
+
+Initially the 'danceability.energy' column in the dataset contained information on two distinct variables, "danceability" and "energy," with their values separated by an underscore ('_'). This format violates the tidy data principle where each variable forms a separate column. To tidy the data, the variables were split into two columns allowing easier identification of the danceability and energy scores, improving the structure of the dataset. Each variable forming a separate column enables more straightforward analyses of the individual variables.
+
+The dataset had 5 genre columns with subgenres as their values, containing many NA values and a wide format. This violated the principle of every variable forming a column and each observation forming a row. To tidy this, the values were sorted under the variables 'playlist_genre' and 'playlist_subgenre'. This enhances the readability and interpretability of the dataset allowing easier analysis and comparisons of the individual variables.  
+
+The variable 'track_album_release_date' contained release dates following the 'YYYY-MM-DD' format except from the year '1975' as they were presented as '75' e.g., 75-08-09. This violates the uniformity expected in a tidy dataset. To increase standardisation of the dataset, occurrences of '75-' were replaced with '1975-'. This allows for proper sorting, filtering, and comparison of dates. Rows containing only the year as the release dates were kept keeping the available information rather than modifying the data. 
+
+The 'id' columns showed identical values across all songs suggesting unnecessary repetition of information. This violates the principle that each variable forms a column as one variable has been split into 3 columns. To tidy this, the identifier was stored into a new variable 'spotify_id' and the redundant columns were removed. This improved the tidiness of the dataset by reducing the number of redundant columns and simplifying the data structure for understanding and analyses.
+
+Following these changes, the order of the columns was not ideal for coherent analysis. To reorder columns in a more visually appealing and standardised format, the variables were grouped logically, improving the logical flow of the data, making it easier for users to locate information.
+
+A potential change was to left-align the numeric values to enhance visual structure and improve readability of the dataset however due to lack of knowledge on advanced formatting techniques I opted to maintain the default alignment.
+
+While rounding long numerical values can enhance readability and reduce complexity, numeric variables with many decimal points such as instrumentalness were retained to conserve the original precision of the data, ensuring the dataset provides accurate information for detailed analysis and maintains integrity for future data modelling. 
+
+While replacing the underscore in the column names with a space can improve readability, the underscores were kept to maintain simplicity with programming functions that may be used in analyses etc., and to avoid complications related to special characters.
